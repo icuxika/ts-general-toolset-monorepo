@@ -1,0 +1,14 @@
+{
+  "name": "@ts-general-toolset-monorepo/ex-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "local utils package",
+  "author": "icuxika",
+  "license": "MIT",
+  "scripts": {
+    "debug": "ts-node ./src/index.ts"
+  },
+  "dependencies": {
+    "@ts-general-toolset-monorepo/utils": "workspace:^"
+  }
+}

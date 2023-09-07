@@ -1,0 +1,13 @@
+{
+  "name": "@ts-general-toolset-monorepo/root",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ts-general-toolset-monorepo",
+  "author": "icuxika",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
