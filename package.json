@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"scripts": {
 		"prepare": "husky install",
-		"lint": "eslint -c .eslintrc.json ./ --ext .ts,.tsx,.vue,.json --max-warnings=0 --fix"
+		"lint": "eslint -c .eslintrc.json ./ --ext .ts,.tsx,.vue,.json --max-warnings=0"
 	},
 	"devDependencies": {
 		"@types/node": "^20.5.9",
