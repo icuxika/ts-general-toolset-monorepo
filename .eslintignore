@@ -3,3 +3,5 @@ pnpm-lock.yaml
 !.lintstagedrc.js
 README.md
 !.vscode
+*.md
+*.yaml
