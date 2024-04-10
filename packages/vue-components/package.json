@@ -1,0 +1,31 @@
+{
+    "name": "@ts-general-toolset-monorepo/vue-components",
+    "private": false,
+    "version": "0.1.0",
+    "type": "module",
+    "files": [
+        "dist",
+        "volar.d.ts"
+    ],
+    "exports": {
+        ".": "./dist/index.js",
+        "./style.css": "./dist/style.css"
+    },
+    "types": "./dist/index.d.ts",
+    "sideEffects": false,
+    "scripts": {
+        "build": "vue-tsc --noEmit && vite build && vue-tsc --project tsconfig.lib.json && pnpm run build:style",
+        "build:style": "postcss src/style.css -o dist/style.css"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.4",
+        "autoprefixer": "^10.4.19",
+        "postcss": "^8.4.38",
+        "postcss-cli": "^11.0.0",
+        "tailwindcss": "^3.4.3",
+        "vite": "^5.2.0",
+        "vue": "^3.4.21",
+        "vue-tsc": "1.8.27"
+    }
+}

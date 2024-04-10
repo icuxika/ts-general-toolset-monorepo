@@ -5,3 +5,10 @@ README.md
 !.vscode
 *.md
 *.yaml
+dist/
+*.css
+*.scss
+*.svg
+postcss.config.js
+tailwind.config.js
+index.html
