@@ -12,7 +12,6 @@ const props = withDefaults(defineProps<ButtonProps>(), {
     type: "primary",
     disabled: false,
 });
-console.log("props", props.type);
 const classes = computed(() => {
     return {
         ["button-primary"]: props.type === "primary",
@@ -22,7 +21,6 @@ const classes = computed(() => {
         ["button-error"]: props.type === "error",
     };
 });
-console.log(classes.value);
 </script>
 
 <template>

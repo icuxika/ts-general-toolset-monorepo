@@ -23,7 +23,7 @@
         "paths": {
             "@/*": ["./src/*"]
         },
-        "types": ["@ts-general-toolset-monorepo/vue-components/volar"]
+        "types": ["./components.d.ts"]
     },
     "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
     "references": [{ "path": "./tsconfig.node.json" }]
