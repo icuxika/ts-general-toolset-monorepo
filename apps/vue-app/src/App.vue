@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTheme } from "@/hooks/use-theme";
+import { useTheme } from "@ts-general-toolset-monorepo/vue-components";
 
 const { theme } = useTheme();
 </script>
@@ -17,7 +17,11 @@ const { theme } = useTheme();
             </a>
         </div>
         <div>
-            <t-button>Hello</t-button>
+            <t-button @click="console.log(1)">Hello, world!</t-button>
+            <t-button type="info">Hello, world!</t-button>
+            <t-button type="success">Hello, world!</t-button>
+            <t-button type="warning">Hello, world!</t-button>
+            <t-button type="error">Hello, world!</t-button>
         </div>
         <div>
             <select v-model="theme">

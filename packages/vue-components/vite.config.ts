@@ -1,4 +1,5 @@
 import vue from "@vitejs/plugin-vue";
+import { exec } from "child_process";
 import fs from "fs";
 import path from "path";
 import { defineConfig } from "vite";
@@ -44,7 +45,15 @@ export {}
     );
 
     return {
-        plugins: [vue()],
+        plugins: [
+            vue(),
+            {
+                name: "build types and styles",
+                closeBundle: async () => {
+                    exec("pnpm run build:types && pnpm run build:style");
+                },
+            },
+        ],
         build: {
             cssCodeSplit: false,
             lib: {

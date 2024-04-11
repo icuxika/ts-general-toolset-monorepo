@@ -14,7 +14,9 @@
     "types": "./dist/index.d.ts",
     "sideEffects": false,
     "scripts": {
-        "build": "vue-tsc --noEmit && vite build && vue-tsc --project tsconfig.lib.json && pnpm run build:style",
+        "build:watch": "vite build --watch",
+        "build": "vue-tsc --noEmit && vite build && pnpm run build:types && pnpm run build:style",
+        "build:types": "vue-tsc --project tsconfig.types.json",
         "build:style": "postcss src/style.css -o dist/style.css"
     },
     "dependencies": {},
