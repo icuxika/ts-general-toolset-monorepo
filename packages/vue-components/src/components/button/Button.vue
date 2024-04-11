@@ -1,12 +1,10 @@
-<script lang="ts">
-export default {
-    // eslint-disable-next-line vue/no-reserved-component-names
-    name: "Button",
-};
-</script>
 <script setup lang="ts">
 import { computed } from "vue";
 import type { ButtonProps } from "./types";
+
+defineOptions({
+    name: "TButton",
+});
 
 const props = withDefaults(defineProps<ButtonProps>(), {
     type: "primary",

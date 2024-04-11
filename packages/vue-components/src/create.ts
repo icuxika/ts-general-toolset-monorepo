@@ -11,7 +11,7 @@ export interface VInstance {
 
 const create = ({
     components = [],
-    componentPrefix = "T",
+    componentPrefix = "",
 }: VCreateOption): VInstance => {
     const registerComponent = (
         app: App,
