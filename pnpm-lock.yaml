@@ -74,6 +74,9 @@ importers:
       '@ts-general-toolset-monorepo/vue-components':
         specifier: workspace:^
         version: link:../../packages/vue-components
+      '@ts-general-toolset-monorepo/vue-tsconfig':
+        specifier: workspace:^
+        version: link:../../packages/vue-tsconfig
       vue:
         specifier: ^3.4.21
         version: 3.4.21(typescript@5.2.2)
@@ -114,6 +117,10 @@ importers:
   packages/utils: {}
 
   packages/vue-components:
+    dependencies:
+      '@ts-general-toolset-monorepo/vue-tsconfig':
+        specifier: workspace:^
+        version: link:../vue-tsconfig
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
@@ -139,6 +146,8 @@ importers:
       vue-tsc:
         specifier: 1.8.27
         version: 1.8.27(typescript@5.2.2)
+
+  packages/vue-tsconfig: {}
 
 packages:
 

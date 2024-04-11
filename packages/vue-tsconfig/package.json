@@ -1,0 +1,11 @@
+{
+    "name": "@ts-general-toolset-monorepo/vue-tsconfig",
+    "private": true,
+    "version": "0.1.0",
+    "description": "A base TSConfig for working with Vue.js",
+    "author": "icuxika",
+    "license": "MIT",
+    "main": "tsconfig.json",
+    "scripts": {},
+    "dependencies": {}
+}

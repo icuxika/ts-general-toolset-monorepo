@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        // 指定编译器不生成任何输出文件
+        "noEmit": true,
+        // 指定生成模块的代码规范
+        "module": "ESNext",
+        // 指定模块解析的策略
+        "moduleResolution": "bundler",
+        // 允许导入JSON模块
+        "resolveJsonModule": true,
+
+        // 指定JSX语法的处理方式
+        "jsx": "preserve",
+        // 指定JSX导入的来源
+        "jsxImportSource": "vue",
+
+        // 启用严格的this类型检查，确保在使用this时进行正确的类型推断
+        "noImplicitThis": true,
+        // 启用所有严格的类型检查选项
+        "strict": true,
+
+        // 启用原样的模块语法
+        "verbatimModuleSyntax": true,
+
+        // 指定编译的目标JavaScript版本
+        "target": "ESNext",
+        // 使用define关键字来定义类的字段
+        "useDefineForClassFields": true,
+
+        // 启用对 ES 模块和 CommonJS 模块之间互操作性的支持
+        "esModuleInterop": true,
+        // 是否强制代码中使用的模块文件名必须和文件系统中的文件名保持大小写一致
+        "forceConsistentCasingInFileNames": true,
+        // 跳过默认库声明文件的类型检查
+        "skipLibCheck": true,
+
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+        // 启用了独立模块编译模式
+        "isolatedModules": true,
+
+        // 开启未使用局部变量的警告
+        "noUnusedLocals": true,
+        // 开启未使用函数参数的警告
+        "noUnusedParameters": true,
+        // 开启在switch语句中检查缺少break语句的警告
+        "noFallthroughCasesInSwitch": true
+    }
+}

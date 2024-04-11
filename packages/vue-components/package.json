@@ -19,7 +19,9 @@
         "build:types": "vue-tsc --project tsconfig.types.json",
         "build:style": "postcss src/style.css -o dist/style.css"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@ts-general-toolset-monorepo/vue-tsconfig": "workspace:^"
+    },
     "devDependencies": {
         "@vitejs/plugin-vue": "^5.0.4",
         "autoprefixer": "^10.4.19",

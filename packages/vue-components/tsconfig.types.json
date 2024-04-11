@@ -1,9 +1,9 @@
 {
-    "extends": "./tsconfig.json",
+    "extends": [
+        "./tsconfig.json",
+        "@ts-general-toolset-monorepo/vue-tsconfig/tsconfig.types.json"
+    ],
     "compilerOptions": {
-        "noEmit": false,
-        "declaration": true,
-        "emitDeclarationOnly": true,
         "rootDir": "src",
         "outDir": "dist"
     }

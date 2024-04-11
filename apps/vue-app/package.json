@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "@ts-general-toolset-monorepo/vue-components": "workspace:^",
+        "@ts-general-toolset-monorepo/vue-tsconfig": "workspace:^",
         "vue": "^3.4.21"
     },
     "devDependencies": {
