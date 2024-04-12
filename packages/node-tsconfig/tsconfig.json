@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ESNext",
+
+        "skipLibCheck": true,
+        "noEmitOnError": true,
+
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+
+        "moduleResolution": "Bundler",
+        "resolveJsonModule": true,
+
+        "strict": true
+    }
+}

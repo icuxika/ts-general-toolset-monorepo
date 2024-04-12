@@ -1,0 +1,10 @@
+{
+    "extends": [
+        "./tsconfig.json",
+        "@ts-general-toolset-monorepo/node-tsconfig/tsconfig.types.json"
+    ],
+    "compilerOptions": {
+        "outDir": "dist"
+    },
+    "include": ["index.ts", "src/**/*"]
+}

@@ -1,14 +1,31 @@
 {
     "name": "@ts-general-toolset-monorepo/ex-app",
-    "private": true,
+    "private": false,
     "version": "0.1.0",
-    "description": "local utils package",
+    "description": "ex-app",
     "author": "icuxika",
     "license": "MIT",
+    "type": "module",
+    "bin": {
+        "ex-app": "./dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
     "scripts": {
-        "debug": "ts-node ./src/index.ts"
+        "debug": "tsc --noEmit && node --no-warnings=ExperimentalWarning --loader ts-node/esm ./src/index.ts",
+        "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript"
     },
     "dependencies": {
+        "@ts-general-toolset-monorepo/node-tsconfig": "workspace:^",
         "@ts-general-toolset-monorepo/utils": "workspace:^"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^25.0.7",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@types/prompts": "^2.4.9",
+        "prompts": "^2.4.2",
+        "rollup": "^4.14.1"
     }
 }

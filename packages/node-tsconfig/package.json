@@ -1,0 +1,11 @@
+{
+    "name": "@ts-general-toolset-monorepo/node-tsconfig",
+    "private": true,
+    "version": "0.1.0",
+    "description": "A base TSConfig for working with node",
+    "author": "icuxika",
+    "license": "MIT",
+    "main": "tsconfig.json",
+    "scripts": {},
+    "dependencies": {}
+}

@@ -5,5 +5,18 @@
     "description": "local utils package",
     "author": "icuxika",
     "license": "MIT",
-    "main": "./src/index.ts"
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript && pnpm run build:types",
+        "build:types": "tsc --project tsconfig.types.json"
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^11.1.6",
+        "rollup": "^4.14.1"
+    },
+    "dependencies": {
+        "@ts-general-toolset-monorepo/node-tsconfig": "workspace:^"
+    }
 }
