@@ -50,7 +50,16 @@ export {}
             {
                 name: "build types and styles",
                 closeBundle: async () => {
-                    exec("pnpm run build:types && pnpm run build:style");
+                    exec("pnpm run build:types", (error) => {
+                        if (error) {
+                            console.log(error);
+                        }
+                    });
+                    exec("pnpm run build:style", (error) => {
+                        if (error) {
+                            console.log(error);
+                        }
+                    });
                 },
             },
         ],

@@ -24,6 +24,13 @@ const { theme } = useTheme();
             <t-button type="error">Hello, world!</t-button>
         </div>
         <div>
+            <t-button loading @click="console.log(1)">Hello, world!</t-button>
+            <t-button loading type="info">Hello, world!</t-button>
+            <t-button loading type="success">Hello, world!</t-button>
+            <t-button loading type="warning">Hello, world!</t-button>
+            <t-button loading type="error">Hello, world!</t-button>
+        </div>
+        <div>
             <select v-model="theme">
                 <option value="os">OS</option>
                 <option value="light">Light</option>
@@ -44,9 +51,7 @@ const { theme } = useTheme();
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         aria-hidden="true"
-                    >
-                        <!-- ... -->
-                    </svg>
+                    ></svg>
                 </span>
             </div>
             <h3
