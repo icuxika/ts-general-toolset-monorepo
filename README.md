@@ -21,3 +21,16 @@ pnpm run lint
 git add .
 pnpm run cm
 ```
+
+## `apps/ex-app`
+### 直接执行
+```
+pnpm --filter "ex-app" run debug
+```
+
+### 构建后执行
+```
+pnpm --filter "utils" run build
+pnpm --filter "ex-app" run build
+node .\apps\ex-app\dist\index.js
+```
