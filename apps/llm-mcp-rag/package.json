@@ -1,0 +1,40 @@
+{
+    "name": "@ts-general-toolset-monorepo/llm-mcp-rag",
+    "private": false,
+    "version": "0.1.0",
+    "description": "llm-mcp-rag",
+    "author": "icuxika",
+    "license": "MIT",
+    "type": "module",
+    "bin": {
+        "ex-app": "./dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "debug": "tsc --noEmit && node --no-warnings=ExperimentalWarning --loader ts-node/esm ./index.ts",
+        "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.10.2",
+        "@ts-general-toolset-monorepo/node-tsconfig": "workspace:^",
+        "@ts-general-toolset-monorepo/utils": "workspace:^",
+        "chalk": "^5.4.1",
+        "dotenv": "^16.5.0",
+        "openai": "^4.96.0"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^25.0.7",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@types/node": "^20.5.9",
+        "@types/prompts": "^2.4.9",
+        "prompts": "^2.4.2",
+        "rollup": "^4.14.1",
+        "ts-node": "^10.9.2",
+        "tslib": "^2.8.1"
+    }
+}

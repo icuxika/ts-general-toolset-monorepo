@@ -1,0 +1,5 @@
+{
+    "extends": "@ts-general-toolset-monorepo/node-tsconfig/tsconfig.json",
+    "compilerOptions": {},
+    "include": ["index.ts", "src/**/*", "rollup.config.ts"]
+}

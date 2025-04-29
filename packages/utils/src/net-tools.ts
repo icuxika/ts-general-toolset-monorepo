@@ -89,6 +89,80 @@ function timeoutPerformTasks(tasks: (() => void)[]) {
     performTasksByScheduler(tasks, timeoutScheduler);
 }
 
+type requestOptions = {
+    url: string;
+    method: "GET" | "POST";
+    progress: (percent: number) => void;
+    data?: any;
+};
+
+function xhrRequest(options: requestOptions): Promise<Blob> {
+    const { url, method, progress, data = null } = options;
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.upload.addEventListener("progress", (e) => {
+            if (e.lengthComputable) {
+                const percentComplete = (e.loaded / e.total) * 100;
+                progress(percentComplete);
+            }
+        });
+        xhr.addEventListener("progress", (e) => {
+            if (e.lengthComputable) {
+                const percentComplete = (e.loaded / e.total) * 100;
+                progress(percentComplete);
+            }
+        });
+        xhr.addEventListener("load", () => {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(xhr.response);
+            } else {
+                reject(new Error("请求出错：${xhr.status}"));
+            }
+        });
+        xhr.open(method, url);
+        xhr.send(data);
+    });
+}
+
+/*eslint no-async-promise-executor: "off"*/
+/*eslint no-constant-condition: "off"*/
+function fetchRequest(
+    options: requestOptions & { abortController: AbortController }
+): Promise<Blob> {
+    const { url, method, progress, data = null, abortController } = options;
+    return new Promise(async (resolve, reject) => {
+        const response = await fetch(url, {
+            method,
+            body: data,
+            signal: abortController.signal,
+        });
+        if (!response.ok) {
+            reject(new Error("请求出错"));
+        }
+        const contentLength = response.headers.get("Content-Length");
+        let total = -1;
+        if (contentLength) {
+            total = parseInt(contentLength);
+        }
+        if (response.body) {
+            const reader = response.body.getReader();
+            let loaded = 0;
+            const chunks: Uint8Array[] = [];
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) {
+                    break;
+                }
+                loaded += value.length;
+                chunks.push(value);
+                progress((loaded / total) * 100);
+            }
+            resolve(new Blob(chunks));
+        }
+        reject(new Error("请求出错"));
+    });
+}
+
 export {
     createFetch,
     idleCallbackPerformTasks,
