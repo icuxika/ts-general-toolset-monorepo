@@ -13,7 +13,7 @@
         "dist"
     ],
     "scripts": {
-        "debug": "tsc --noEmit && node --no-warnings=ExperimentalWarning --loader ts-node/esm ./index.ts",
+        "dev": "tsx ./index.ts",
         "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript"
     },
     "dependencies": {
@@ -29,7 +29,6 @@
         "@types/prompts": "^2.4.9",
         "prompts": "^2.4.2",
         "rollup": "^4.14.1",
-        "ts-node": "^10.9.2",
-        "tslib": "^2.8.1"
+        "tsx": "^4.19.4"
     }
 }
